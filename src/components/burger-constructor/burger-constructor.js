@@ -5,9 +5,15 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import ConstructorItem from "../constructor-item/constructor-item";
 import styles from "./burger-constructor.module.css";
-import data from "../../utils/data.json";
+import PropTypes from "prop-types";
+import ingredientType from "../../utils/types"
 
-const BurgerConstructor = () => {
+const BurgerConstructor = ({ data, modal, content }) => {
+  const getContent = () => {
+    content("order");
+    modal();
+  };
+
   const renderElements = (data) => {
     return data.map((e) => {
       return (
@@ -27,7 +33,7 @@ const BurgerConstructor = () => {
   const totalPrice = (data) => {
     let result = 0;
     data.map((e) => {
-      return result += e.price;
+      return (result += e.price);
     });
     return result;
   };
@@ -52,10 +58,10 @@ const BurgerConstructor = () => {
           <p className="text text_type_digits-medium mr-4">
             {totalPrice(data)}
           </p>
-          <div className={styles.bigIcon + " mr-10"}>
+          <div className={[styles.bigIcon, "mr-10"].join(" ")}>
             <CurrencyIcon type="primary" />
           </div>
-          <Button type="primary" size="large" htmlType={"button"}>
+          <Button onClick={getContent} type="primary" size="large">
             Оформить заказ
           </Button>
         </div>
@@ -65,3 +71,9 @@ const BurgerConstructor = () => {
 };
 
 export default BurgerConstructor;
+
+BurgerConstructor.propTypes = {
+  data: PropTypes.arrayOf(ingredientType.isRequired).isRequired,
+  modal: PropTypes.func.isRequired,
+  content: PropTypes.func.isRequired,
+};

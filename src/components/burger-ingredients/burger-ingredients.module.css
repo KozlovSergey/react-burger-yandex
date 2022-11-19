@@ -1,6 +1,6 @@
 .warp {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .main {
@@ -20,6 +20,12 @@
   margin-right: 8px;
 }
 
+.tabs {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
 .scroll {
   min-height: 565px;
   overflow-y: scroll;
@@ -36,3 +42,5 @@
 .scroll::-webkit-scrollbar-thumb {
   background-color: #8585AD;
 }
+
+
