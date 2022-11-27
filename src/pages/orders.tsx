@@ -25,6 +25,12 @@ export const Orders: FC = () => {
   const [orders, setOrders] = useState<IOrder[]>([]);
 
 
+  useEffect(() => {
+    const sortByDate = data.orders.sort((a: IOrder, b: IOrder) =>
+      a.number < b.number ? 1 : a.number > b.number ? -1 : 0
+    );
+    setOrders(sortByDate)
+  }, []);
 
   useEffect(() => {
     const sortByDate = data.orders.sort((a: IOrder, b: IOrder) =>
