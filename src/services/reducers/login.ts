@@ -3,7 +3,7 @@ import {
     GET_LOGIN_SUCCESS,
     GET_LOGIN_FAILED,
     TLoginActions,
-} from "../../actions/login"
+} from "../actions/login"
 
 type TInitialState = {
     loginMessage: string;
@@ -12,7 +12,7 @@ type TInitialState = {
     loginFailed: boolean;
 }
 
-export const initialState = {
+const initialState = {
     loginMessage: "",
     loginRequest: false,
     loginSuccess: false,
