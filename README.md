@@ -1,5 +1,7 @@
 # Проект React Burger
 
+### https://kozlovsergey.github.io/react-burger-yandex/
+
 Проект создан в рамках обучение по курсу `React` в `Яндекс Практикум`.
 
 ## Available Scripts
