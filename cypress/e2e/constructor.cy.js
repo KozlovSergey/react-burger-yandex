@@ -1,6 +1,6 @@
 describe('Check constructor page', () => {
-  const email = 'test3000@mail.ru';
-  const password = 'test3000';
+  const email = 'testuser3000@mail.ru';
+  const password = 'testuser3000';
 
   beforeEach(() => {
     cy.viewport(1920,1080)
@@ -8,6 +8,7 @@ describe('Check constructor page', () => {
   })
   it('Should open and close modal ingredient', () => {
     cy.get('[data-test=60d3b41abdacab0026a733c6]').click()
+    cy.wait(5000)
     cy.get('[data-test=cross]').click()
   })
 
